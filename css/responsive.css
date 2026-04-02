@@ -1,0 +1,60 @@
+/* ============================================================
+   RESPONSIVE.CSS — Media Queries & Breakpoints
+   IT Artificer — Premium Coworking Space
+   ============================================================ */
+
+/* ── TABLET (≤ 1024px) ── */
+@media (max-width: 1024px) {
+  .pricing-highlight-wrap  { grid-template-columns: 1fr; gap: 48px; }
+  .faq-wrap                { grid-template-columns: 1fr; gap: 48px; }
+  .faq-illustration        { display: none; }
+  .about,
+  .events,
+  .testimonial-section     { grid-template-columns: 1fr; gap: 48px; }
+  .footer__grid            { grid-template-columns: 1fr 1fr; }
+  .pricing-grid            { grid-template-columns: 1fr; max-width: 400px; }
+  .price-card--featured    { transform: none; }
+  .student-cta-inner       { grid-template-columns: 1fr; gap: 48px; }
+}
+
+/* ── MOBILE (≤ 767px) ── */
+@media (max-width: 767px) {
+  /* Stats */
+  .stats-bar__inner { grid-template-columns: 1fr 1fr; }
+
+  /* Blog */
+  .blog-grid { grid-template-columns: 1fr; }
+
+  /* Navigation — off-canvas */
+  .nav {
+    display: none; position: fixed; inset: 0;
+    background: rgba(2,11,24,.97); z-index: 200;
+    flex-direction: column; justify-content: center; align-items: center;
+  }
+  .nav.is-open         { display: flex; }
+  .nav__list           { flex-direction: column; gap: 8px; text-align: center; }
+  .nav__list a         { font-size: 1.3rem; padding: 12px 32px; }
+  .nav-toggle          { display: block; margin-left: auto; z-index: 201; }
+
+  /* Hero */
+  .hero__nav           { display: none; }
+
+  /* About badge */
+  .about__badge        { right: 0; bottom: -20px; }
+
+  /* Footer */
+  .footer__grid        { grid-template-columns: 1fr; gap: 32px; }
+
+  /* Registration modal padding */
+  .reg-modal__header,
+  .reg-modal__body,
+  .reg-modal__footer   { padding-left: 24px; padding-right: 24px; }
+  .reg-steps           { padding-left: 24px; padding-right: 24px; }
+
+  /* Registration form layout */
+  .reg-row             { grid-template-columns: 1fr; }
+  .plan-selector       { grid-template-columns: 1fr; }
+
+  /* Hide step labels on mobile to save space */
+  .reg-step__label     { display: none; }
+}

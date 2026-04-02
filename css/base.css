@@ -1,0 +1,118 @@
+/* ============================================================
+   BASE.CSS — Variables, Reset, Layout Utilities
+   IT Artificer — Premium Coworking Space
+   ============================================================ */
+
+/* ── CSS VARIABLES ── */
+:root {
+  --blue-950: #020b18;
+  --blue-900: #061529;
+  --blue-800: #0a2040;
+  --blue-700: #0d3060;
+  --blue-600: #1346a0;
+  --blue-500: #1a5fd4;
+  --blue-400: #3b82f6;
+  --blue-300: #60a5fa;
+  --blue-200: #bfdbfe;
+  --blue-100: #dbeafe;
+  --blue-50:  #eff6ff;
+  --accent:   #38bdf8;
+  --accent2:  #06b6d4;
+  --white:    #ffffff;
+  --text:     #e2eaf8;
+  --muted:    #7ea3cc;
+  --surface:  rgba(13,48,96,.55);
+  --card-bg:  rgba(6,21,41,.72);
+  --radius:   14px;
+  --radius-lg:22px;
+  --transition: .38s cubic-bezier(.4,0,.2,1);
+}
+
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--blue-950);
+  color: var(--text);
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+
+/* ── LAYOUT ── */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* ── ANIMATED BG MESH ── */
+body::before {
+  content:'';
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 0%, rgba(26,95,212,.25) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 100%, rgba(6,182,212,.18) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 50% 50%, rgba(59,130,246,.08) 0%, transparent 60%);
+  animation: meshShift 14s ease-in-out infinite alternate;
+}
+@keyframes meshShift {
+  0%  { opacity:.8; }
+  100%{ opacity:1; filter:hue-rotate(20deg); }
+}
+
+/* ── EYEBROW ── */
+.eyebrow {
+  display:inline-flex; align-items:center; gap:8px;
+  font-size:.72rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--accent);
+}
+.eyebrow::before {
+  content:''; display:inline-block; width:28px; height:2px;
+  background:linear-gradient(90deg,var(--accent),transparent);
+  border-radius:2px;
+}
+.eyebrow--dark { color:var(--blue-500); }
+.eyebrow--dark::before { background:linear-gradient(90deg,var(--blue-500),transparent); }
+
+/* ── SECTION BASE ── */
+.section { position:relative; z-index:1; padding:100px 0; }
+.section__title {
+  font-family:'Syne',sans-serif; font-size:clamp(1.8rem,4vw,2.9rem); font-weight:800;
+  line-height:1.15; letter-spacing:-.02em; color:var(--white); max-width:640px;
+  margin:16px auto 52px;
+}
+.section__title--left { margin-left:0; }
+.section__title--light { color:var(--white); }
+
+/* ── BUTTONS ── */
+.btn {
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  padding:13px 32px; border-radius:50px; font-weight:700; font-size:.9rem;
+  border:none; cursor:pointer; text-decoration:none; letter-spacing:.02em;
+  transition:all var(--transition);
+}
+.btn--primary {
+  background:linear-gradient(135deg,var(--blue-500),var(--accent2));
+  color:#fff;
+  box-shadow:0 4px 24px rgba(26,95,212,.4);
+}
+.btn--primary:hover { box-shadow:0 8px 36px rgba(26,95,212,.6); transform:translateY(-2px); }
+.btn--ghost {
+  background:transparent; border:1.5px solid rgba(59,130,246,.4); color:var(--blue-200);
+}
+.btn--ghost:hover { border-color:var(--blue-400); background:rgba(59,130,246,.1); color:var(--white); }
+.btn--secondary {
+  background:rgba(59,130,246,.12); border:1.5px solid rgba(59,130,246,.3); color:var(--blue-200);
+}
+.btn--secondary:hover { background:rgba(59,130,246,.2); color:var(--white); }
+.btn--lg { padding:17px 42px; font-size:1rem; }
+
+/* ── SCROLL REVEAL ── */
+.reveal { opacity:0; transform:translateY(36px); transition:opacity .7s cubic-bezier(.4,0,.2,1), transform .7s cubic-bezier(.4,0,.2,1); }
+.reveal.is-visible { opacity:1; transform:none; }
+.reveal-delay-1 { transition-delay:.1s; }
+.reveal-delay-2 { transition-delay:.2s; }
+.reveal-delay-3 { transition-delay:.3s; }
+.reveal-delay-4 { transition-delay:.4s; }
+
+/* ── LEAD TEXT ── */
+.lead { font-size:1.05rem; color:var(--blue-200); line-height:1.7; margin-bottom:16px; font-weight:300; }
