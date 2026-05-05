@@ -1,351 +1,541 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IT Artificer — Premium Coworking Space</title>
+  <meta name="description" content="Co-working Space In Peshawar " />
+  <meta name="keywords" content="ITArtificer" />
+  <title>itartificer.com</title>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
 
-  <!-- Stylesheets -->
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: ['selector', '[data-theme="dark"]'],
+      theme: {
+        extend: {
+          colors: {
+            pdmGreen: {
+              50: '#F7FEE7',
+              100: '#ECFCCB',
+              500: '#84CC16', // Primary Green
+              600: '#65A30D',
+            },
+            pdmDark: {
+              500: '#1E293B',
+              900: '#0F172A', // Primary Dark Blue
+              950: '#020617',
+            },
+            pdmGray: {
+              50: '#F9FAFB',
+              100: '#F3F4F6',
+              500: '#4B5563', // Body text
+              900: '#111827',
+            }
+          },
+          fontFamily: {
+            display: ['Syne', 'sans-serif'],
+            body:    ['Inter', 'sans-serif'],
+            serif:   ['Playfair Display', 'serif'],
+          },
+          borderRadius: {
+            '3xl': '24px',
+            '4xl': '32px',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Core CSS System -->
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/layout.css" />
   <link rel="stylesheet" href="css/sections.css" />
   <link rel="stylesheet" href="css/registration.css" />
   <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/extras.css" />
 </head>
 <body>
 
-  <!-- ══════════════════ TOPBAR ══════════════════ -->
-  <div class="topbar">
-    <div class="container topbar__inner">
-      <div class="topbar__contact">
-        <a href="mailto:hello@itartificer.pk">hello@itartificer.pk</a>
-        <span class="dot" aria-hidden="true"></span>
-        <span>Mon – Fri 9:00 AM – 5:00 PM &nbsp;·&nbsp; Sat &amp; Sun — Closed</span>
+  <!-- ═══════════════════════════════════════════
+       PRELOADER
+  ═══════════════════════════════════════════ -->
+  <div id="preloader">
+    <div class="preloader__ring">
+      <div class="preloader__dot"></div>
+      <div class="preloader__logo">
+        <span class="preloader__initials"><span>I</span><span>T</span><span>A</span></span>
+        <span class="preloader__tagline">IT Artificer</span>
       </div>
-      <a class="topbar__cta" href="#book">Book Your Tour</a>
     </div>
   </div>
 
-  <!-- ══════════════════ HEADER ══════════════════ -->
+  <!-- ═══════════════════════════════════════════
+       TOPBAR
+  ═══════════════════════════════════════════ -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <div class="topbar__contact">
+        <a href="mailto:zertashiashah@gmail.com">info@itartificer.com</a>
+        <span class="dot"></span>
+        <span>Mon – Fri &nbsp;9:00 AM – 5:00 PM</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <!-- THEME TOGGLE -->
+        <!-- <button id="themeToggle" aria-label="Toggle light / dark mode" title="Toggle theme"
+          style="width:32px;height:32px;border-radius:8px;border:1px solid rgba(59,130,246,.22);background:rgba(59,130,246,.10);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s ease;flex-shrink:0;">
+          <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" style="color:var(--muted);">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <svg id="iconSun" xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" style="color:var(--accent);display:none;">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button> -->
+        <a class="topbar__cta" href="#volunteer">Join as Volunteer</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       HEADER
+  ═══════════════════════════════════════════ -->
   <header class="header" id="header">
     <div class="container header__inner">
-      <a class="logo" href="#">IT Artificer</a>
-      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="nav" aria-label="Main">
+      <a class="logo" href="#home">
+        <img src="logo.png" alt="IT Artificer" class="logo__img" />
+      </a>
+      <nav class="nav" aria-label="Main navigation">
         <ul class="nav__list">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#pricing">Pricing</a></li>
           <li><a href="#events">Events</a></li>
-          <li><a href="#blog">Blog</a></li>
+          <li><a href="#impact">Spaces</a></li>
+          <li><a href="#volunteer">Pricing</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <div class="header__phone">
-        <span class="header__phone-label">Call Anytime</span>
-        <a href="tel:+923001234567">+92 300 123 4567</a>
+      <div class="header__cta">
+        <a class="header__book-btn" href="#volunteer">Join Now</a>
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </header>
 
   <main>
 
-    <!-- ══════════════════ HERO ══════════════════ -->
+    <!-- ═══════════════════════════════════════════
+         HERO SLIDER
+    ═══════════════════════════════════════════ -->
     <section class="hero" id="home" aria-label="Featured">
       <div class="hero__slides">
 
-        <article class="hero__slide is-active" style="--hero-img: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80');">
+        <article class="hero__slide is-active" style="--hero-img: url('https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1920&q=80');">
           <div class="hero__overlay"></div>
           <div class="container hero__content">
-            <p class="eyebrow">Creative Environment</p>
-            <h1 class="hero__title">Where <em>Ideas</em> Meet<br>Innovation</h1>
-            <p class="hero__subtitle">Premium coworking space designed for focused minds and ambitious teams.</p>
-            <a class="btn btn--primary" href="#book">Book Your Tour</a>
+            <!-- <p class="eyebrow">Empowering Communities</p> -->
+            <h1 class="hero__title">Work Smarter <em>Grow Faster</em>.</h1>
+            <p class="hero__subtitle">At IT Artificer, we don’t just build software — we architect intelligent solutions that drive innovation, efficiency, and growth. As a full-service IT partner, we deliver scalable, secure, and cutting-edge technology meet the demands of your business.</p>
+            <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;">
+              <a class="btn btn--primary" href="#volunteer">Become a Volunteer</a>
+              <a class="btn btn--ghost" href="#about">Our Story</a>
+            </div>
             <ul class="hero__meta">
-              <li><span class="hero__meta-icon" aria-hidden="true">◎</span> +92 300 123 4567</li>
-              <li>480 sq ft coworking space</li>
-              <li>3,740 seats available</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="hero__slide" style="--hero-img: url('https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1920&q=80');">
-          <div class="hero__overlay"></div>
-          <div class="container hero__content">
-            <p class="eyebrow">Leading Provider</p>
-            <h1 class="hero__title">Work Smarter,<br><em>Grow Faster</em></h1>
-            <p class="hero__subtitle">State-of-the-art facilities crafted for productivity and collaboration.</p>
-            <a class="btn btn--primary" href="#book">Book Your Tour</a>
-            <ul class="hero__meta">
-              <li><span class="hero__meta-icon" aria-hidden="true">◎</span> +92 300 123 4567</li>
-              <li>480 sq ft coworking space</li>
-              <li>3,740 seats available</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="hero__slide" style="--hero-img: url('https://images.unsplash.com/photo-1604328698692-f76ea9498e76?w=1920&q=80');">
-          <div class="hero__overlay"></div>
-          <div class="container hero__content">
-            <p class="eyebrow">Trusted &amp; Creative</p>
-            <h1 class="hero__title">Your <em>Space</em> to<br>Build Greatness</h1>
-            <p class="hero__subtitle">Join a vibrant community of entrepreneurs, developers, and creators.</p>
-            <a class="btn btn--primary" href="#book">Book Your Tour</a>
-            <ul class="hero__meta">
-              <li><span class="hero__meta-icon" aria-hidden="true">◎</span> +92 300 123 4567</li>
-              <li>480 sq ft coworking space</li>
-              <li>3,740 seats available</li>
+              <li>
+                <span class="hero__meta-icon">📍</span>
+                Khyber Pakhtunkhwa, Pakistan
+              </li>
+              <li>200+ Active Volunteers</li>
+              <li>55,000+ People Reached</li>
             </ul>
           </div>
         </article>
 
       </div>
-      <div class="hero__dots" role="tablist" aria-label="Slides">
-        <button type="button" class="hero__dot is-active" aria-selected="true"  aria-label="Slide 1"></button>
-        <button type="button" class="hero__dot"           aria-selected="false" aria-label="Slide 2"></button>
-        <button type="button" class="hero__dot"           aria-selected="false" aria-label="Slide 3"></button>
-      </div>
-      <button type="button" class="hero__nav hero__nav--prev" aria-label="Previous slide">‹</button>
-      <button type="button" class="hero__nav hero__nav--next" aria-label="Next slide">›</button>
     </section>
 
-    <!-- ══════════════════ STATS BAR ══════════════════ -->
+    <!-- ═══════════════════════════════════════════
+         STATS BAR
+    ═══════════════════════════════════════════ -->
+    <div class="live-seats-bar">
+      <div class="container live-seats-bar__inner">
+        <div class="live-seats__dot"></div>
+        <div class="live-seats__text">
+          <strong>200+ Active Volunteers</strong>
+        </div>
+        <div class="live-seats__divider"></div>
+        <span class="live-seats__badge">Impact</span>
+        <div class="live-seats__divider"></div>
+        <span style="font-family:var(--font-body);font: size 1.2rem;;color:var(--muted);color: black;font-weight: bold;">55,000+ People Reached</span>
+        <div class="live-seats__divider"></div>
+        <span style="font-family:var(--font-body);font: size 1.2rem;;color:var(--muted);color: black;font-weight: bold;">15+ Years of Service</span>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         STATS BAR
+    ═══════════════════════════════════════════ -->
     <div class="stats-bar">
       <div class="container stats-bar__inner">
         <div class="stat-item reveal">
-          <div class="stat-num">640+</div>
-          <div class="stat-label">Conference Rooms</div>
+          <div class="stat-num">200+</div>
+          <div class="stat-label">Active Volunteers</div>
         </div>
         <div class="stat-item reveal reveal-delay-1">
-          <div class="stat-num">3,740</div>
-          <div class="stat-label">Total Seats</div>
+          <div class="stat-num">55K+</div>
+          <div class="stat-label">People Reached</div>
         </div>
         <div class="stat-item reveal reveal-delay-2">
-          <div class="stat-num">30+</div>
-          <div class="stat-label">Years Experience</div>
+          <div class="stat-num">15+</div>
+          <div class="stat-label">Years of Service</div>
         </div>
         <div class="stat-item reveal reveal-delay-3">
-          <div class="stat-num">98%</div>
-          <div class="stat-label">Client Satisfaction</div>
+          <div class="stat-num">20+</div>
+          <div class="stat-label">Programs Completed</div>
         </div>
       </div>
     </div>
 
-    <!-- ══════════════════ FEATURES ══════════════════ -->
-    <section class="section section--features" id="features">
+    <!-- ═══════════════════════════════════════════
+         MISSION & VISION
+    ═══════════════════════════════════════════ -->
+    <section class="section section--features" id="about">
       <div class="container">
-        <p class="eyebrow eyebrow--dark reveal">Get to know us</p>
-        <h2 class="section__title reveal">
-          We're Known for Having <em style="font-style:normal;color:var(--accent)">Cool Workspaces</em> Filled with Amenities
-        </h2>
-        <div class="feature-grid">
+        <!-- <p class="eyebrow eyebrow--dark reveal">Our Foundation</p> -->
+        <h2 class="section__title reveal">Mission &amp; <em>Vision</em></h2>
+        <div class="feature-grid" style="grid-template-columns: 1fr 1fr; gap: 2rem;">
+
           <article class="feature-card reveal">
-            <div class="feature-card__icon">🏢</div>
-            <span class="feature-card__num">640</span>
-            <h3>Conference &amp; Meeting Rooms</h3>
-            <p>Fully equipped rooms with AV technology, whiteboards, and video conferencing.</p>
+            <div class="feature-card__icon">
+              🎯
+            </div>
+            <h3>Our Mission</h3>
+            <p>Our mission is to provide a comfortable, ready-to-use workspace where professionals and teams can thrive. We handle the daily office details so you can focus on doing great work, connecting with others, and growing your business.</p>
           </article>
+
           <article class="feature-card reveal reveal-delay-1">
-            <div class="feature-card__icon">📍</div>
-            <h3>The Best Location</h3>
-            <p>Strategically positioned in the heart of the tech district with easy transit access and surroundings.</p>
+            <div class="feature-card__icon">
+              🌟
+            </div>
+            <h3>Our Vision</h3>
+            <p>Our vision is to be the go-to workspace for big ideas and community growth. We want to bring creative minds together under one roof to share ideas, support each other, and build the successful businesses of tomorrow.</p>
           </article>
-          <article class="feature-card reveal reveal-delay-2">
-            <div class="feature-card__icon">⚡</div>
-            <h3>Premium Features</h3>
-            <p>Gigabit internet, standing desks, ergonomic chairs, and 24/7 biometric access control.</p>
-          </article>
-          <article class="feature-card reveal reveal-delay-3">
-            <div class="feature-card__icon">🤝</div>
-            <h3>Space for All</h3>
-            <p>Solo desks, team rooms, private offices — flexible plans that scale with your ambition.</p>
-          </article>
+
         </div>
       </div>
     </section>
 
-    <!-- ══════════════════ ABOUT ══════════════════ -->
+    <!-- ═══════════════════════════════════════════
+         FEATURES  (SVG icons replacing emojis)
+    ═══════════════════════════════════════════ -->
+    <section class="section section--features" id="features">
+      <div class="container">
+        <!-- <p class="eyebrow eyebrow--dark reveal">Get to know us</p> -->
+        <h2 class="section__title reveal">Core <em>Focus Areas</em></h2>
+        <div class="feature-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+
+          <article class="feature-card reveal">
+            <div class="feature-card__icon">
+              💻
+            </div>
+            <h3>Flexible Workspaces</h3>
+            <p>Choose the way you work with hot desks, dedicated desks, or private offices tailored to your needs.</p>
+          </article>
+
+          <article class="feature-card reveal reveal-delay-1">
+            <div class="feature-card__icon">
+              ⚡
+            </div>
+            <h3>High-Speed Connectivity</h3>
+            <p>Stay productive with enterprise-grade, secure Wi-Fi and backup systems to ensure you're always online.</p>
+          </article>
+
+          <article class="feature-card reveal reveal-delay-2">
+            <div class="feature-card__icon">
+              🤝
+            </div>
+            <h3>Modern Meeting Rooms</h3>
+            <p>Professional spaces equipped with smart screens and video conferencing for seamless team collaboration.</p>
+          </article>
+
+          <article class="feature-card reveal reveal-delay-3">
+            <div class="feature-card__icon">
+              ☕
+            </div>
+            <h3>Premium Amenities</h3>
+            <p>Enjoy unlimited gourmet coffee, tea, and a fully stocked kitchen to keep you fueled throughout the day.</p>
+          </article>
+
+          <article class="feature-card reveal reveal-delay-4">
+            <div class="feature-card__icon">
+              🖨️
+            </div>
+            <h3>Business Support</h3>
+            <p>Access essential office tools, including high-quality printing, scanning, and professional mail handling services.</p>
+          </article>
+
+          <article class="feature-card reveal reveal-delay-5">
+            <div class="feature-card__icon">
+              🌟
+            </div>
+            <h3>Community Events</h3>
+            <p>Grow your network through curated workshops, networking mixers, and social gatherings with fellow members.</p>
+          </article>
+
+          <article class="feature-card reveal reveal-delay-5">
+            <div class="feature-card__icon">
+              🔑
+            </div>
+            <h3>24/7 Secure Access</h3>
+            <p>Work on your own schedule with round-the-clock entry and advanced security monitoring for peace of mind.</p>
+          </article>
+
+          <article class="feature-card reveal reveal-delay-5">
+            <div class="feature-card__icon">
+              🌱
+            </div>
+            <h3>Wellness & Comfort</h3>
+            <p>Boost productivity in an ergonomic environment featuring natural light, quiet zones, and comfortable lounge areas.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
     <section class="section section--about" id="about">
       <div class="container about">
-        <div class="about__media reveal">
+        <div class="about__media reveal-left">
           <div class="about__img-wrap">
-            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80"
-                 alt="IT Artificer coworking lounge" width="600" height="500" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80" alt="ITArtificer" width="600" height="500" loading="lazy" />
           </div>
-          <div class="about__badge">
-            <strong>30</strong>
-            <span>Years of experience</span>
-          </div>
+          <div class="about__badge"><strong>15+</strong><span>Years of Service</span></div>
         </div>
-        <div class="about__text reveal reveal-delay-1">
-          <p class="eyebrow eyebrow--dark">Get to know us</p>
+        <div class="about__text reveal-right">
+          <!-- <p class="eyebrow eyebrow--dark">Our Story</p> -->
           <h2 class="section__title section__title--left">Leading Coworking Space Provider in the Region</h2>
           <p class="lead">IT Artificer brings together the finest workspace infrastructure and a curated community to help every professional thrive.</p>
-          <p>Our spaces are designed by architects and productivity experts to balance focus, creativity, and collaboration. From cutting-edge tech infrastructure to warm social zones — every detail is intentional.</p>
+          <p>IT Artificer is a premier coworking space located in the heart of Peshawar, KPK. We provide a modern, flexible, and fully-equipped workspace designed to support the needs of startups, freelancers, remote teams, and established businesses.</p>
           <div class="about__columns">
             <div>
               <h4>Learn to Achieve</h4>
-              <p>Workshops, mentorship sessions, and learning events hosted weekly.</p>
+              <p>IT Artificer provides the tools, mentorship, and environment you need to turn your ideas into reality.</p>
             </div>
             <div>
-              <h4>Space for You</h4>
-              <p>Private offices and open desks available daily, monthly, or annually.</p>
+              <h4>Work Together</h4>
+              <p>IT Artificer brings together the finest workspace infrastructure and a curated community to help every professional thrive.</p>
             </div>
           </div>
-          <a class="btn btn--primary" href="#book">Book Your Tour</a>
+          <a class="btn btn--primary" href="#volunteer">Become a Volunteer</a>
         </div>
       </div>
     </section>
 
-    <!-- ══════════════════ SERVICES ══════════════════ -->
-    <section class="section section--services" id="services">
+    <!-- ═══════════════════════════════════════════
+         SERVICES  (SVG icons, auto-fit grid)
+    ═══════════════════════════════════════════ -->
+    <section class="section section--services" id="events">
       <div class="container">
-        <p class="eyebrow reveal" style="justify-content:center;display:flex">What we're offering</p>
-        <h2 class="section__title section__title--light reveal" style="text-align:center;margin-left:auto">
-          Available Services for Our Coworking Space
-        </h2>
+        <!-- <p class="eyebrow reveal" style="justify-content:center;display:flex">Stay Updated</p> -->
+        <h2 class="section__title section__title--light reveal" style="text-align:center;margin-left:auto">Upcoming <em>Events</em></h2>
         <div class="services-grid">
-          <article class="service-item reveal"><div class="service-icon">🌐</div><h3>Gigabit Internet</h3></article>
-          <article class="service-item reveal reveal-delay-1"><div class="service-icon">🍳</div><h3>Fully Equipped Kitchen</h3></article>
-          <article class="service-item reveal reveal-delay-2"><div class="service-icon">🅿️</div><h3>Huge Parking Space</h3></article>
-          <article class="service-item reveal reveal-delay-3"><div class="service-icon">🎙️</div><h3>Conference Rooms</h3></article>
-          <article class="service-item reveal"><div class="service-icon">☕</div><h3>Coffee &amp; Drinks Bar</h3></article>
-          <article class="service-item reveal reveal-delay-1"><div class="service-icon">🔒</div><h3>24/7 Secure Access</h3></article>
-          <article class="service-item reveal reveal-delay-2"><div class="service-icon">🖨️</div><h3>Print &amp; Scan Hub</h3></article>
-          <article class="service-item reveal reveal-delay-3"><div class="service-icon">📬</div><h3>Mail &amp; Package Handling</h3></article>
+
+          <article class="service-item reveal">
+            <div class="service-icon">
+              💼
+            </div>
+            <h3>Business & Enterprise Solutions</h3>
+            <p>They are actively developing and maintaining automation tools, including a Business Automation ERP, ITA Smart CRM, and various Human Resource, Payroll, and Inventory management software.</p>
+            <small>📍 Peshawar</small>
+          </article>
+
+          <article class="service-item reveal reveal-delay-1">
+            <div class="service-icon">
+              🩺
+            </div>
+            <h3>Healthcare & Education Platforms.</h3>
+            <p>Their current focus in this sector includes comprehensive Learning Management Systems, School & College Software, and Clinic and Hospital MIS along with appointment booking applications.</p>
+            <small>📍 Peshawar</small>
+          </article>
+
+          <article class="service-item reveal reveal-delay-2">
+            <div class="service-icon">
+              🏷️
+            </div>
+            <h3>In-House Brands</h3>
+            <p>Under this umbrella, IT Artificer has successfully launched various brands, including:ITA Store, The 360 Media, Khwaab-e-Khawar, ITA Digital Library, and others.</p>
+            <small>📍 Peshawar</small>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <!-- ══════════════════ TESTIMONIALS ══════════════════ -->
-    <section class="section section--testimonials">
+    <!-- ═══════════════════════════════════════════
+         GALLERY — bento grid
+    ═══════════════════════════════════════════ -->
+   <section class="section section--gallery" id="impact">
+      <div class="container">
+        <!-- <p class="eyebrow eyebrow--dark reveal" style="justify-content:center;display:flex">Our Environment</p> -->
+        <h2 class="section__title reveal" style="text-align:center;margin-left:auto">Our <em>Spaces</em></h2>
+        <div class="gallery-grid">
+
+          <div class="gallery-item reveal" data-src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=85" data-caption="The Main Atrium & Collaboration Hub">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt="The Main Atrium & Collaboration Hub" loading="lazy" />
+            <div class="gallery-item__overlay"><span>Main Atrium</span></div>
+            <div class="gallery-item__zoom">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+            </div>
+          </div>
+
+          <div class="gallery-item reveal reveal-delay-1" data-src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=85" data-caption="The Focus Tech Lab">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80" alt="The Focus Tech Lab" loading="lazy" />
+            <div class="gallery-item__overlay"><span>Focus Tech Lab</span></div>
+            <div class="gallery-item__zoom">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+            </div>
+          </div>
+
+          <div class="gallery-item reveal reveal-delay-2" data-src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&q=85" data-caption="The Flexible Workshop">
+            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&q=80" alt="The Flexible Workshop" loading="lazy" />
+            <div class="gallery-item__overlay"><span>Flexible Workshop</span></div>
+            <div class="gallery-item__zoom">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+            </div>
+          </div>
+
+          <div class="gallery-item reveal reveal-delay-3" data-src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&q=85" data-caption="Innovation & Prototyping Maker Space">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80" alt="Innovation Maker Space" loading="lazy" />
+            <div class="gallery-item__overlay"><span>Innovation Space</span></div>
+            <div class="gallery-item__zoom">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+            </div>
+          </div>
+
+          <div class="gallery-item reveal reveal-delay-4" data-src="https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?w=1200&q=85" data-caption="The Recharge & Social Zone">
+            <img src="https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?w=800&q=80" alt="The Recharge & Social Zone" loading="lazy" />
+            <div class="gallery-item__overlay"><span>Recharge Zone</span></div>
+            <div class="gallery-item__zoom">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+      <button id="lightboxClose" class="lightbox__close" aria-label="Close">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <img id="lightboxImg" class="lightbox__img" src="" alt="Gallery photo" />
+      <p id="lightboxCaption" class="lightbox__caption"></p>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         TESTIMONIALS
+    ═══════════════════════════════════════════ -->
+<section class="section section--testimonials">
       <div class="container testimonial-section">
         <div class="testimonial-section__intro reveal">
-          <p class="eyebrow eyebrow--dark">What clients say</p>
-          <h2 class="section__title section__title--left">Trusted by Hundreds of Innovators</h2>
-          <p class="lead" style="margin-bottom:0">Real words from real members who call IT Artificer their professional home.</p>
+          <!-- <p class="eyebrow eyebrow--dark">Client Success Stories</p> -->
+          <h2 class="section__title">Trusted by Our <em>Clients</em></h2>
+          <p class="lead" style="margin-bottom:0">Real stories from the businesses and organizations we've empowered with our software solutions.</p>
         </div>
-        <div class="reveal reveal-delay-1">
+        <div class="reveal reveal-delay-1" style="width:100%">
           <div class="testimonial-track-wrap">
             <div class="testimonial-track">
+
               <div class="testimonial">
-                <p>The ambiance, the speed, the people — IT Artificer transformed how our startup operates. We went from a tiny apartment to landing our first enterprise client, all while working from here.</p>
+                <div class="testimonial__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                <p>Visionary leader driving innovation and excellence at the core of IT Artificer’s mission.</p>
                 <footer>
-                  <div class="testimonial__avatar">JM</div>
-                  <div><cite>James Miller</cite><span>Founder, Skyloop Labs</span></div>
+                  <div class="testimonial__avatar">HA</div>
+                  <div><cite>Haider Ali</cite><span>CEO of ITArtificer</span></div>
                 </footer>
               </div>
+
               <div class="testimonial">
-                <p>I've tried five coworking spaces over three cities. IT Artificer has the best infrastructure, the friendliest community, and the most reasonably priced plans I've ever encountered.</p>
+                <div class="testimonial__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                <p>Ensures smooth operations and strategic execution across all service departments.</p>
                 <footer>
-                  <div class="testimonial__avatar">SR</div>
-                  <div><cite>Sarah Rose</cite><span>Freelance Designer</span></div>
+                  <div class="testimonial__avatar">ND</div>
+                  <div><cite>Najm Ud Din</cite><span>COO</span></div>
                 </footer>
               </div>
+
               <div class="testimonial">
-                <p>Our remote team spreads across three countries. When we meet in person, IT Artificer's conference facilities make it feel like we never lost a beat. Absolutely world-class.</p>
+                <div class="testimonial__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                <p>Delivers projects with precision, leading teams from concept to successful completion.</p>
                 <footer>
-                  <div class="testimonial__avatar">AK</div>
-                  <div><cite>Amir Khan</cite><span>CTO, NovaTech</span></div>
+                  <div class="testimonial__avatar">SK</div>
+                  <div><cite>Sharik</cite><span>HR Manager</span></div>
                 </footer>
               </div>
+
             </div>
           </div>
-          <div class="testimonial-dots" role="tablist" aria-label="Testimonials"></div>
+          <div class="testimonial-dots" role="tablist"></div>
         </div>
       </div>
     </section>
 
-    <!-- ══════════════════ PRICING ══════════════════ -->
-    <section class="section section--pricing" id="pricing">
-      <div class="container">
-        <p class="eyebrow eyebrow--dark reveal" style="justify-content:center;display:flex">Our pricing tables</p>
-        <h2 class="section__title reveal" style="text-align:center;margin-left:auto">Choose Your Plan</h2>
-        <div class="pricing-grid">
-          <article class="price-card reveal">
-            <p class="price-card__label">Basic Pack</p>
-            <p class="price-card__price"><span>$</span>20<span>.00</span></p>
-            <p class="price-card__period">per month</p>
-            <ul>
-              <li>High speed internet</li>
-              <li>Free parking space</li>
-              <li>Drinks &amp; coffee</li>
-              <li>Full access</li>
-            </ul>
-            <a class="btn btn--ghost" href="#book">Get Started</a>
-          </article>
-          <article class="price-card price-card--featured reveal reveal-delay-1">
-            <p class="price-card__badge">Most Popular</p>
-            <p class="price-card__label">Standard Pack</p>
-            <p class="price-card__price"><span>$</span>40<span>.00</span></p>
-            <p class="price-card__period">per month</p>
-            <ul>
-              <li>High speed internet</li>
-              <li>Free parking space</li>
-              <li>Drinks &amp; coffee</li>
-              <li>Full access + meeting rooms</li>
-            </ul>
-            <a class="btn btn--primary" href="#book">Get Started</a>
-          </article>
-          <article class="price-card reveal reveal-delay-2">
-            <p class="price-card__label">Premium Pack</p>
-            <p class="price-card__price"><span>$</span>60<span>.00</span></p>
-            <p class="price-card__period">per month</p>
-            <ul>
-              <li>High speed internet</li>
-              <li>Free parking space</li>
-              <li>Drinks &amp; coffee</li>
-              <li>Private office + all access</li>
-            </ul>
-            <a class="btn btn--ghost" href="#book">Get Started</a>
-          </article>
-        </div>
-      </div>
-    </section>
 
-    <!-- ══════════════════ STUDENT SPACE CTA ══════════════════ -->
-    <section class="section section--student-cta" id="students">
+    <section class="section section--student-cta" id="volunteer">
       <div class="container">
         <div class="student-cta-inner">
-          <div class="reveal">
-            <div class="student-cta__label">🎓 Student Space</div>
-            <h2 class="student-cta__title">Built for<br><em>Students &amp; Interns</em></h2>
-            <p class="student-cta__desc">Skip the noisy library and crowded café. Get a professional desk, lightning-fast internet, and a community that actually helps you grow — all at a price that fits a student budget.</p>
+          <div class="reveal-left">
+            <div class="student-cta__label">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              Coworking Membership
+            </div>
+            <h2 class="student-cta__title">Ready to Join our<br><em>Community?</em></h2>
+            <p class="student-cta__desc">Join the most energetic coworking community in Peshawar. Choose a plan that fits your workflow and start growing today.</p>
             <ul class="student-cta__perks">
               <li class="student-cta__perk">
-                <span class="student-cta__perk-icon">🎓</span>
-                Valid student ID required — exclusive rate guaranteed
+                <span class="student-cta__perk-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </span>
+                Be part of meaningful community projects
               </li>
               <li class="student-cta__perk">
-                <span class="student-cta__perk-icon">📅</span>
-                Flexible schedule — choose your days &amp; hours
+                <span class="student-cta__perk-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </span>
+                Flexible volunteering opportunities
               </li>
               <li class="student-cta__perk">
-                <span class="student-cta__perk-icon">🤝</span>
-                Mentorship &amp; networking with industry professionals
+                <span class="student-cta__perk-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </span>
+                Training and skill development workshops
               </li>
               <li class="student-cta__perk">
-                <span class="student-cta__perk-icon">💡</span>
-                Access to workshops, events &amp; learning resources
+                <span class="student-cta__perk-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </span>
+                Network with like-minded change-makers
               </li>
             </ul>
-            <button class="btn btn--primary btn--lg" id="openStudentReg" type="button">
-              Register as a Student →
-            </button>
+            <button class="btn btn--primary btn--lg" id="openStudentReg" type="button">Choose a Plan →</button>
           </div>
-          <div class="reveal reveal-delay-2">
+          <div class="reveal-right">
             <div class="student-cta__card">
-              <span class="student-cta__card-badge">🎓 Student Plan</span>
-              <h3>ITA Launch Space</h3>
-              <p>Everything a student needs to work, learn, and connect — in one powerful monthly plan.</p>
+              <span class="student-cta__card-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                Student Plan
+              </span>
+              <h3>ITArtificer</h3>
+              <p>Support our mission and stay connected with the community through our dedicated support plans.</p>
               <div class="student-cta__price-row">
                 <span class="student-cta__price">PKR 5,000</span>
                 <span class="student-cta__price-period">/ month</span>
@@ -356,32 +546,31 @@
                 <li>Print, scan &amp; copy access</li>
                 <li>Coffee, tea &amp; refreshments</li>
                 <li>Access to community events</li>
-                <li>Free parking (first come, first served)</li>
+                <li>Free parking</li>
                 <li>No hidden fees whatsoever</li>
               </ul>
-              <button class="btn btn--primary" style="width:100%;" id="openStudentReg2" type="button">
-                Claim Your Spot Now
-              </button>
+              <button class="btn btn--primary" style="width:100%;" id="openStudentReg2" type="button">Claim Your Spot Now</button>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ══════════════════ EVENTS ══════════════════ -->
-    <section class="section section--events" id="events">
+    <!-- ═══════════════════════════════════════════
+         EVENTS
+    ═══════════════════════════════════════════ -->
+    <!-- <section class="section section--events" id="events">
       <div class="container events">
-        <div class="events__intro reveal">
-          <p class="eyebrow eyebrow--dark">Join latest events</p>
+        <div class="events__intro reveal-left">
           <h2 class="section__title section__title--left">Upcoming Events at IT Artificer</h2>
-          <p class="lead">Stay connected with our thriving community through workshops, pitch nights, and networking events.</p>
+          <p class="lead">Stay connected with our thriving community through workshops, training, and networking events.</p>
           <ul class="events__bullets">
             <li>Monthly startup pitch competitions with real investor panels.</li>
             <li>Weekly tech talks, design sprints, and hackathons.</li>
           </ul>
           <a class="btn btn--secondary" href="#events">View All Events</a>
         </div>
-        <div class="events__list reveal reveal-delay-1">
+        <div class="events__list reveal-right">
           <article class="event-card">
             <div class="event-card__date"><span class="day">20</span><span class="mon">Sep</span></div>
             <div class="event-card__body">
@@ -403,477 +592,398 @@
             <div class="event-card__body">
               <p class="event-card__meta"><span>6:00 PM</span><span>Rooftop Lounge</span></p>
               <h3>Networking Mixer &amp; Demo Night</h3>
-              <p>Meet the community, demo your latest project, and connect over great food and drinks.</p>
+              <p>Meet the community, demo your latest project, and connect over food and drinks.</p>
             </div>
           </article>
         </div>
       </div>
-    </section>
+    </section> -->
 
-    <!-- ══════════════════ BLOG ══════════════════ -->
+    <!-- ═══════════════════════════════════════════
+         INSIGHTS (Blog)
+    ═══════════════════════════════════════════ -->
     <section class="section section--blog" id="blog">
       <div class="container">
-        <p class="eyebrow eyebrow--dark reveal" style="justify-content:center;display:flex">How we help clients</p>
+        <!-- <p class="eyebrow eyebrow--dark reveal" style="justify-content:center;display:flex">Insights &amp; resources</p> -->
         <h2 class="section__title reveal" style="text-align:center;margin-left:auto">News &amp; Articles</h2>
         <div class="blog-grid">
+
           <article class="blog-card reveal">
             <div class="blog-card__img">
-              <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="Team working together" width="400" height="260" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="Team working" width="400" height="260" loading="lazy" />
             </div>
             <div class="blog-card__body">
-              <p class="blog-card__meta"><span>20 Sep</span><span>Admin</span><span>2 Comments</span></p>
+              <p class="blog-card__meta"><span>20 Sep</span><span>Workspace Tips</span></p>
               <h3><a href="#">How to Achieve More with Your Nine-to-Six Routine</a></h3>
               <a class="read-more" href="#">Read More</a>
             </div>
           </article>
+
           <article class="blog-card reveal reveal-delay-1">
             <div class="blog-card__img">
               <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80" alt="Collaborative workspace" width="400" height="260" loading="lazy" />
             </div>
             <div class="blog-card__body">
-              <p class="blog-card__meta"><span>19 Sep</span><span>Admin</span><span>1 Comment</span></p>
+              <p class="blog-card__meta"><span>19 Sep</span><span>Community</span></p>
               <h3><a href="#">Why Working Here is a Pleasure for Modern Professionals</a></h3>
               <a class="read-more" href="#">Read More</a>
             </div>
           </article>
+
           <article class="blog-card reveal reveal-delay-2">
             <div class="blog-card__img">
               <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&q=80" alt="Office meeting" width="400" height="260" loading="lazy" />
             </div>
             <div class="blog-card__body">
-              <p class="blog-card__meta"><span>18 Sep</span><span>Admin</span><span>5 Comments</span></p>
+              <p class="blog-card__meta"><span>18 Sep</span><span>Productivity</span></p>
               <h3><a href="#">5 Productivity Hacks Every Remote Worker Should Know</a></h3>
               <a class="read-more" href="#">Read More</a>
             </div>
           </article>
+
         </div>
       </div>
     </section>
 
-    <!-- ══════════════════ PRICING HIGHLIGHT ══════════════════ -->
-    <section class="section section--pricing-highlight">
+    <!-- ═══════════════════════════════════════════
+         CONTACT FORM
+    ═══════════════════════════════════════════ -->
+    <section class="section section--contact-form" id="contact-form">
       <div class="container">
-        <div class="pricing-highlight-wrap">
-          <div class="pricing-highlight__left reveal">
-            <div class="pricing-highlight__tag">💰 Pricing</div>
-            <h2 class="pricing-highlight__title">Only <span>PKR 5,000</span><br>/month</h2>
-            <p class="pricing-highlight__sub">No hidden fees. Work smart with minimum investment, maximum value.</p>
-            <a class="btn btn--primary btn--lg" href="#book">Get Started Today</a>
-          </div>
-          <div class="pricing-highlight__right reveal reveal-delay-2">
-            <div class="perfect-for__header">
-              <span class="perfect-for__globe">🌐</span>
-              <h3>Perfect For</h3>
-            </div>
-            <ul class="perfect-for__list">
-              <li>
-                <span class="perfect-for__icon">🚀</span>
-                <div>
-                  <strong>Early-stage startups &amp; founders</strong>
-                  <p>Launch your idea in a professional environment built for growth.</p>
+        <!-- <p class="eyebrow eyebrow--dark reveal" style="justify-content:center;display:flex">Get in touch</p> -->
+        <h2 class="section__title reveal" style="text-align:center;margin-left:auto">Contact <em>Us</em></h2>
+        <div class="contact-wrap">
+          <div class="contact-info reveal-left">
+            <p class="contact-info__desc">Have a question about our coworking spaces, membership plans, or want to book a tour? Fill in the form and our team will get back to you within 24 hours.</p>
+            <div class="contact-details">
+              <div class="contact-detail">
+                <div class="contact-detail__icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                 </div>
-              </li>
-              <li>
-                <span class="perfect-for__icon">💻</span>
-                <div>
-                  <strong>Freelancers &amp; digital nomads</strong>
-                  <p>Ditch the coffee shop — get a real desk, real internet, real results.</p>
+                <div class="contact-detail__body">
+                  <h4>Location</h4>
+                  <p>Chamkani Tower, Ring Road, Peshawar, KPK</p>
                 </div>
-              </li>
-              <li>
-                <span class="perfect-for__icon">⌨️</span>
-                <div>
-                  <strong>Remote developers &amp; designers</strong>
-                  <p>Focus-first workspaces with zero distractions and all the tools you need.</p>
+              </div>
+              <div class="contact-detail">
+                <div class="contact-detail__icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.9 1.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.91 6.91l1.18-1.18a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                 </div>
-              </li>
-              <li>
-                <span class="perfect-for__icon">🎓</span>
-                <div>
-                  <strong>Students &amp; interns building their future</strong>
-                  <p>A professional address and community to accelerate your career from day one.</p>
+                <div class="contact-detail__body">
+                  <h4>Phone</h4>
+                  <a href="tel:+923339296314">+923339296314</a>
                 </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════════════ FAQ ══════════════════ -->
-    <section class="section section--faq" id="faq">
-      <div class="container faq-wrap">
-        <div class="faq-illustration reveal">
-          <div class="faq-illustration__blob">
-            <span class="faq-illustration__icon">💬</span>
-          </div>
-          <div class="faq-illustration__badge">
-            <strong>PKR<br>5,000</strong>
-            <span>per month</span>
-          </div>
-        </div>
-        <div class="reveal reveal-delay-1">
-          <div class="faq-intro">
-            <p class="eyebrow eyebrow--dark">Common questions</p>
-            <h2 class="section__title section__title--left" style="margin-bottom:16px">Frequently Asked Questions</h2>
-            <p>Whether you're joining us for a day or planning a long-term workspace, here are answers to some of the most common questions about our Launching Space.</p>
-          </div>
-          <div class="faq-list">
-            <div class="faq-item is-open">
-              <button class="faq-question" aria-expanded="true">
-                <span class="faq-icon">+</span>
-                What is included in the PKR 5,000/month fee?
-              </button>
-              <div class="faq-answer">
-                <p>You get access to a dedicated workspace, high-speed internet, shared resources (like printing/scanning), and full access to our clean, secure, and professional environment.</p>
+              </div>
+              <div class="contact-detail">
+                <div class="contact-detail__icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div class="contact-detail__body">
+                  <h4>Email</h4>
+                  <a href="mailto:info@itartificer.com">info@itartificer.com</a>
+                </div>
+              </div>
+              <div class="contact-detail">
+                <div class="contact-detail__icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div class="contact-detail__body">
+                  <h4>Working Hours</h4>
+                  <p>Mon–Fri: 9:00 AM – 5:00 PM</p>
+                </div>
               </div>
             </div>
-            <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
-                <span class="faq-icon">+</span>
-                Is there a minimum time commitment?
-              </button>
-              <div class="faq-answer">
-                <p>No long-term lock-in required. You can start with a daily pass, a weekly plan, or go monthly — whatever fits your schedule.</p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
-                <span class="faq-icon">+</span>
-                Can I bring guests or clients to meetings?
-              </button>
-              <div class="faq-answer">
-                <p>Absolutely. Members can bring guests for meetings and client calls. Conference rooms can be booked in advance at no extra charge for Standard and Premium plan holders.</p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
-                <span class="faq-icon">+</span>
-                Are there any hidden charges?
-              </button>
-              <div class="faq-answer">
-                <p>None whatsoever. The monthly fee covers everything listed in your plan. Any premium add-ons are clearly priced upfront — no surprises.</p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
-                <span class="faq-icon">+</span>
-                Can students or part-time freelancers join?
-              </button>
-              <div class="faq-answer">
-                <p>Yes! ITA Launch Space welcomes students, freelancers, and part-time professionals. Our Basic plan at PKR 5,000/month is designed to be accessible and affordable for those just getting started.</p>
-              </div>
+          </div>
+          <div class="reveal-right">
+            <div class="contact-form-card">
+              <h3>Send a Message</h3>
+              <form id="contactForm" novalidate>
+                <div class="cf-row">
+                  <div class="cf-group">
+                    <label class="cf-label" for="cfName">Your Name *</label>
+                    <input class="cf-input" type="text" id="cfName" placeholder="Ahmad Khan" required />
+                  </div>
+                  <div class="cf-group">
+                    <label class="cf-label" for="cfEmail">Email Address *</label>
+                    <input class="cf-input" type="email" id="cfEmail" placeholder="you@example.com" required />
+                  </div>
+                </div>
+                <div class="cf-group">
+                  <label class="cf-label" for="cfSubject">Subject *</label>
+                  <select class="cf-select" id="cfSubject" required>
+                    <option value="">Select a subject</option>
+                    <option value="Space Booking">Space Booking</option>
+                    <option value="Membership Plans">Membership Plans</option>
+                    <option value="Partnership">Partnership</option>
+                    <option value="General Inquiry">General Inquiry</option>
+                  </select>
+                </div>
+                <div class="cf-group">
+                  <label class="cf-label" for="cfMessage">Message *</label>
+                  <textarea class="cf-textarea" id="cfMessage" placeholder="Tell us what you need and we'll get back to you shortly..." rows="4" required></textarea>
+                </div>
+                <div class="cf-submit">
+                  <button class="btn btn--primary" type="submit" id="cfSubmit">Send Message →</button>
+                </div>
+                <div id="cfFeedback" class="cf-feedback"></div>
+              </form>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ══════════════════ CTA BOOK ══════════════════ -->
+    <!-- ═══════════════════════════════════════════
+         GOOGLE MAP
+    ═══════════════════════════════════════════ -->
+    <section class="section--map" id="map">
+      <div class="container">
+        <!-- <p class="eyebrow eyebrow--dark reveal" style="justify-content:center;display:flex">Find Us</p> -->
+        <h2 class="section__title reveal" style="text-align:center;margin-left:auto">We're in <em>Peshawar</em></h2>
+        <div class="map-wrap reveal">
+          <div class="map-info">
+            <div>
+              <h3 class="map-info__title">IT Artificer</h3>
+              <p class="map-info__addr">Peshawar, Khyber Pakhtunkhwa,<br>Pakistan</p>
+            </div>
+            <div class="map-info__row">
+              <div class="map-info__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div class="map-info__row-body">
+                <h5>Working Hours</h5>
+                <p>Mon–Fri: 9:00 AM – 5:00 PM</p>
+              </div>
+            </div>
+            <div class="map-info__row">
+              <div class="map-info__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.9 1.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.91 6.91l1.18-1.18a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div class="map-info__row-body">
+                <h5>Call Us</h5>
+                <a href="tel:+923339296314">+923339296314</a>
+              </div>
+            </div>
+            <div class="map-info__row">
+              <div class="map-info__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="map-info__row-body">
+                <h5>Email Us</h5>
+                <a href="mailto:info@itartificer.com">info@itartificer.com</a>
+              </div>
+            </div>
+            <a class="map-directions-btn" href="https://maps.google.com/?q=Peshawar+KPK+Pakistan" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Get Directions
+            </a>
+          </div>
+          <div class="map-embed">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d212490.88905614385!2d71.37432785!3d33.9914054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38d917b2bb7f9567%3A0x608e2f8d47ffcf3!2sPeshawar%2C%20Khyber%20Pakhtunkhwa%2C%20Pakistan!5e0!3m2!1sen!2s!4v1712000000000!5m2!1sen!2s"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="PDM Location — Peshawar">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         CTA STRIP
+    ═══════════════════════════════════════════ -->
     <section class="section section--book" id="book">
       <div class="container book-strip">
-        <div>
-          <p class="eyebrow">Need help or have questions?</p>
-          <h2>Call Us Anytime</h2>
-          <p class="book-strip__phone"><a href="tel:+923001234567">+92 300 123 4567</a></p>
+        <div class="reveal-left">
+          <p class="eyebrow">Ready to get started?</p>
+          <h2>Visit Us in Peshawar</h2>
+          <p class="book-strip__phone"><a href="tel:+923339296314">+92 333 929 6314</a></p>
         </div>
-        <a class="btn btn--primary btn--lg" href="#contact">Contact Us Today</a>
+        <a class="btn btn--primary btn--lg reveal-right" href="#contact-form">Contact Us Today</a>
       </div>
     </section>
 
   </main>
 
-  <!-- ══════════════════ FOOTER ══════════════════ -->
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
   <footer class="footer" id="contact">
     <div class="container footer__grid">
       <div class="footer__brand">
-        <a class="logo" href="#">IT Artificer</a>
-        <p>Trusted &amp; creative workspace for teams who want to focus, connect, and grow. Your professional home in the heart of innovation.</p>
+        <a class="logo" href="#home">
+          <img src="logo.png" alt="IT Artificer" class="logo__img" style="height:38px;" />
+        </a>
+        <p>A leading software development company driving digital transformation and empowering businesses with innovative IT solutions in Khyber Pakhtunkhwa, Pakistan.</p>
       </div>
       <div>
         <h4 class="footer__heading">Quick Links</h4>
         <ul class="footer__list">
           <li><a href="#about">About us</a></li>
-          <li><a href="#events">Latest events</a></li>
-          <li><a href="#services">Our services</a></li>
-          <li><a href="#blog">News &amp; articles</a></li>
-          <li><a href="#contact">Contact us</a></li>
+          <li><a href="#impact">Our Spaces</a></li>
+          <li><a href="#events">Upcoming Events</a></li>
+          <li><a href="#volunteer">Membership Plans</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
       <div>
         <h4 class="footer__heading">Hours</h4>
         <ul class="footer__list">
-          <li>Mon–Fri: 7:00 AM – 6:00 PM</li>
-          <li>Saturday: 9:00 AM – 5:00 PM</li>
+          <li>Mon–Fri: 9:00 AM – 5:00 PM</li>
+          <li>Saturday: Closed</li>
           <li>Sunday: Closed</li>
         </ul>
       </div>
       <div>
         <h4 class="footer__heading">Contact</h4>
         <ul class="footer__list">
-          <li>Peshawar, Khyber Pakhtunkhwa, PK</li>
-          <li><a href="mailto:hello@itartificer.pk">hello@itartificer.pk</a></li>
-          <li><a href="tel:+923001234567">+92 300 123 4567</a></li>
+          <li>Chamkani Tower, Ring Road, Peshawar</li>
+          <li><a href="mailto:info@itartificer.com">info@itartificer.com</a></li>
+          <li><a href="tel:+923339395432">+92 333 9395432</a></li>
         </ul>
       </div>
     </div>
     <div class="container footer__bottom">
       <p>© 2026 IT Artificer. All rights reserved.</p>
       <div class="footer__social">
-        <a href="#" aria-label="LinkedIn">in</a>
-        <a href="#" aria-label="Twitter">𝕏</a>
-        <a href="#" aria-label="Instagram">◈</a>
-        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="#" aria-label="Twitter X">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
       </div>
     </div>
   </footer>
 
-  <!-- ══════════════════ STUDENT REGISTRATION MODAL ══════════════════ -->
+  <!-- ═══════════════════════════════════════════
+       BACK TO TOP
+  ═══════════════════════════════════════════ -->
+  <button id="backToTop" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <!-- ═══════════════════════════════════════════
+       WHATSAPP FLOAT
+  ═══════════════════════════════════════════ -->
+  <a class="whatsapp-float"
+     href="https://wa.me/923339296314?text=Hi%20ITA!%20I%20want%20to%20know%20more%20about%20coworking."
+     target="_blank"
+     rel="noopener"
+     aria-label="Chat on WhatsApp">
+    <div class="whatsapp-float__icon">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12.004 2.003c-5.514 0-9.997 4.48-9.997 9.992 0 1.762.463 3.416 1.268 4.852L2 22l5.27-1.256A9.954 9.954 0 0012.004 22c5.514 0 9.996-4.48 9.996-9.993S17.518 2.003 12.004 2.003zm0 18.204a8.23 8.23 0 01-4.195-1.152l-.301-.179-3.126.745.78-3.046-.197-.313a8.188 8.188 0 01-1.258-4.373c0-4.535 3.695-8.227 8.237-8.227 4.543 0 8.237 3.692 8.237 8.227-.001 4.534-3.695 8.318-8.177 8.318z"/>
+      </svg>
+    </div>
+    <span class="whatsapp-float__label">Chat on WhatsApp</span>
+  </a>
+
+  <!-- ═══════════════════════════════════════════
+       STUDENT REGISTRATION MODAL
+  ═══════════════════════════════════════════ -->
   <div class="reg-overlay" id="regOverlay" role="dialog" aria-modal="true" aria-labelledby="regModalTitle">
     <div class="reg-modal" id="regModal">
-
       <div class="reg-modal__header">
         <div class="reg-modal__title-group">
           <div class="reg-modal__eyebrow">🎓 Student Registration</div>
           <h2 class="reg-modal__heading" id="regModalTitle">Claim Your Student Space</h2>
           <p class="reg-modal__subheading">Fill out the form below and our team will confirm your spot within 24 hours.</p>
         </div>
-        <button class="reg-close" id="regClose" type="button" aria-label="Close registration form">✕</button>
+        <button class="reg-close" id="regClose" type="button" aria-label="Close modal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
       </div>
-
-      <div class="reg-steps" aria-label="Form progress">
-        <div class="reg-step active" id="step-ind-1">
-          <span class="reg-step__num">1</span>
-          <span class="reg-step__label">Personal Info</span>
-        </div>
-        <div class="reg-step" id="step-ind-2">
-          <span class="reg-step__num">2</span>
-          <span class="reg-step__label">Academic Details</span>
-        </div>
-        <div class="reg-step" id="step-ind-3">
-          <span class="reg-step__num">3</span>
-          <span class="reg-step__label">Space Preferences</span>
-        </div>
-        <div class="reg-step" id="step-ind-4">
-          <span class="reg-step__num">4</span>
-          <span class="reg-step__label">Review &amp; Submit</span>
-        </div>
+      <div class="reg-steps">
+        <div class="reg-step active" id="step-ind-1"><span class="reg-step__num">1</span><span class="reg-step__label">Personal Info</span></div>
+        <div class="reg-step" id="step-ind-2"><span class="reg-step__num">2</span><span class="reg-step__label">Academic Details</span></div>
+        <div class="reg-step" id="step-ind-3"><span class="reg-step__num">3</span><span class="reg-step__label">Space Preferences</span></div>
+        <div class="reg-step" id="step-ind-4"><span class="reg-step__num">4</span><span class="reg-step__label">Review &amp; Submit</span></div>
       </div>
-
       <div class="reg-modal__body">
-
-        <!-- SUCCESS -->
         <div class="reg-success" id="regSuccess">
           <div class="reg-success__icon">✓</div>
           <h3>Registration Submitted!</h3>
-          <p>Thanks for registering with IT Artificer. Our team will review your application and reach out within 24 hours to confirm your spot.</p>
+          <p>Our team will review your application and reach out within 24 hours to confirm your spot.</p>
           <div class="reg-success__ref" id="regRef">REF #ITA-000000</div>
           <button class="btn btn--primary" type="button" id="regDone">Done</button>
         </div>
-
-        <!-- PAGE 1: Personal Info -->
+        <!-- PAGE 1 -->
         <div class="reg-page is-active" id="reg-page-1">
           <div class="reg-row">
-            <div class="reg-field" id="field-firstName">
-              <label class="reg-label" for="firstName">First Name <span class="req">*</span></label>
-              <input class="reg-input" type="text" id="firstName" placeholder="e.g. Ahmad" autocomplete="given-name" />
-              <span class="reg-error-msg">Please enter your first name.</span>
-            </div>
-            <div class="reg-field" id="field-lastName">
-              <label class="reg-label" for="lastName">Last Name <span class="req">*</span></label>
-              <input class="reg-input" type="text" id="lastName" placeholder="e.g. Khan" autocomplete="family-name" />
-              <span class="reg-error-msg">Please enter your last name.</span>
-            </div>
+            <div class="reg-field" id="field-firstName"><label class="reg-label" for="firstName">First Name <span class="req">*</span></label><input class="reg-input" type="text" id="firstName" placeholder="e.g. Ahmad" autocomplete="given-name" /><span class="reg-error-msg">Please enter your first name.</span></div>
+            <div class="reg-field" id="field-lastName"><label class="reg-label" for="lastName">Last Name <span class="req">*</span></label><input class="reg-input" type="text" id="lastName" placeholder="e.g. Khan" autocomplete="family-name" /><span class="reg-error-msg">Please enter your last name.</span></div>
           </div>
           <div class="reg-row">
-            <div class="reg-field" id="field-email">
-              <label class="reg-label" for="regEmail">Email Address <span class="req">*</span></label>
-              <input class="reg-input" type="email" id="regEmail" placeholder="you@university.edu.pk" autocomplete="email" />
-              <span class="reg-error-msg">Please enter a valid email address.</span>
-            </div>
-            <div class="reg-field" id="field-phone">
-              <label class="reg-label" for="regPhone">Phone Number <span class="req">*</span></label>
-              <input class="reg-input" type="tel" id="regPhone" placeholder="+92 3XX XXX XXXX" autocomplete="tel" />
-              <span class="reg-error-msg">Please enter your phone number.</span>
-            </div>
+            <div class="reg-field" id="field-email"><label class="reg-label" for="regEmail">Email <span class="req">*</span></label><input class="reg-input" type="email" id="regEmail" placeholder="you@university.edu.pk" autocomplete="email" /><span class="reg-error-msg">Please enter a valid email.</span></div>
+            <div class="reg-field" id="field-phone"><label class="reg-label" for="regPhone">Phone <span class="req">*</span></label><input class="reg-input" type="tel" id="regPhone" placeholder="+92 300 000 0000" autocomplete="tel" /><span class="reg-error-msg">Please enter a valid phone number.</span></div>
           </div>
-          <div class="reg-row reg-row--full">
-            <div class="reg-field" id="field-dob">
-              <label class="reg-label" for="regDob">Date of Birth <span class="req">*</span></label>
-              <input class="reg-input" type="date" id="regDob" />
-              <span class="reg-error-msg">Please enter your date of birth.</span>
-            </div>
-          </div>
-          <div class="reg-row reg-row--full">
-            <div class="reg-field">
-              <label class="reg-label" for="regAddress">Home Address</label>
-              <input class="reg-input" type="text" id="regAddress" placeholder="Street, City" autocomplete="street-address" />
-            </div>
-          </div>
+          <div class="reg-field" id="field-dob"><label class="reg-label" for="regDob">Date of Birth <span class="req">*</span></label><input class="reg-input" type="date" id="regDob" /><span class="reg-error-msg">Please enter your date of birth.</span></div>
         </div>
-
-        <!-- PAGE 2: Academic Details -->
+        <!-- PAGE 2 -->
         <div class="reg-page" id="reg-page-2">
           <div class="reg-row">
-            <div class="reg-field" id="field-university">
-              <label class="reg-label" for="regUniversity">University / Institution <span class="req">*</span></label>
-              <input class="reg-input" type="text" id="regUniversity" placeholder="e.g. UET Peshawar" />
-              <span class="reg-error-msg">Please enter your institution name.</span>
-            </div>
-            <div class="reg-field" id="field-studentId">
-              <label class="reg-label" for="regStudentId">Student ID / Roll No. <span class="req">*</span></label>
-              <input class="reg-input" type="text" id="regStudentId" placeholder="e.g. 2021-CS-045" />
-              <span class="reg-error-msg">Please enter your student ID.</span>
-            </div>
+            <div class="reg-field" id="field-university"><label class="reg-label" for="regUniversity">University <span class="req">*</span></label><input class="reg-input" type="text" id="regUniversity" placeholder="e.g. University of Peshawar" /><span class="reg-error-msg">Please enter your university.</span></div>
+            <div class="reg-field" id="field-studentId"><label class="reg-label" for="regStudentId">Student ID <span class="req">*</span></label><input class="reg-input" type="text" id="regStudentId" placeholder="e.g. UOP-2024-001" /><span class="reg-error-msg">Please enter your student ID.</span></div>
           </div>
           <div class="reg-row">
-            <div class="reg-field" id="field-degree">
-              <label class="reg-label" for="regDegree">Degree Program <span class="req">*</span></label>
-              <select class="reg-select" id="regDegree">
-                <option value="">— Select Degree —</option>
-                <option>Bachelor's (BS / BE / B.Sc)</option>
-                <option>Master's (MS / M.Sc)</option>
-                <option>PhD</option>
-                <option>Diploma / Associate</option>
-                <option>Other</option>
-              </select>
-              <span class="reg-error-msg">Please select your degree program.</span>
-            </div>
-            <div class="reg-field" id="field-semester">
-              <label class="reg-label" for="regSemester">Current Semester / Year <span class="req">*</span></label>
-              <select class="reg-select" id="regSemester">
-                <option value="">— Select —</option>
-                <option>1st Semester</option><option>2nd Semester</option>
-                <option>3rd Semester</option><option>4th Semester</option>
-                <option>5th Semester</option><option>6th Semester</option>
-                <option>7th Semester</option><option>8th Semester</option>
-                <option>Final Year</option>
-              </select>
-              <span class="reg-error-msg">Please select your current semester.</span>
-            </div>
+            <div class="reg-field" id="field-degree"><label class="reg-label" for="regDegree">Degree <span class="req">*</span></label><select class="reg-select" id="regDegree"><option value="">Select degree</option><option>BS / Bachelor's</option><option>MS / Master's</option><option>PhD</option><option>Diploma</option><option>Other</option></select><span class="reg-error-msg">Please select your degree.</span></div>
+            <div class="reg-field" id="field-semester"><label class="reg-label" for="regSemester">Semester <span class="req">*</span></label><select class="reg-select" id="regSemester"><option value="">Select semester</option><option>1st</option><option>2nd</option><option>3rd</option><option>4th</option><option>5th</option><option>6th</option><option>7th</option><option>8th</option></select><span class="reg-error-msg">Please select your semester.</span></div>
           </div>
-          <div class="reg-row reg-row--full">
-            <div class="reg-field" id="field-field">
-              <label class="reg-label" for="regField">Field of Study <span class="req">*</span></label>
-              <select class="reg-select" id="regField">
-                <option value="">— Select Field —</option>
-                <option>Computer Science / IT</option>
-                <option>Software Engineering</option>
-                <option>Electrical Engineering</option>
-                <option>Business / Management</option>
-                <option>Design / Media</option>
-                <option>Data Science / AI</option>
-                <option>Other</option>
-              </select>
-              <span class="reg-error-msg">Please select your field of study.</span>
-            </div>
-          </div>
-          <div class="reg-row reg-row--full">
-            <div class="reg-field">
-              <label class="reg-label" for="regGradYear">Expected Graduation Year</label>
-              <input class="reg-input" type="number" id="regGradYear" placeholder="e.g. 2026" min="2024" max="2032" />
-            </div>
+          <div class="reg-row">
+            <div class="reg-field" id="field-field"><label class="reg-label" for="regField">Field of Study <span class="req">*</span></label><select class="reg-select" id="regField"><option value="">Select field</option><option>Computer Science</option><option>Software Engineering</option><option>Information Technology</option><option>Electrical Engineering</option><option>Business Administration</option><option>Data Science</option><option>Cybersecurity</option><option>Other</option></select><span class="reg-error-msg">Please select your field.</span></div>
+            <div class="reg-field"><label class="reg-label" for="regGradYear">Graduation Year</label><input class="reg-input" type="number" id="regGradYear" placeholder="e.g. 2026" min="2024" max="2035" /></div>
           </div>
         </div>
-
-        <!-- PAGE 3: Space Preferences -->
+        <!-- PAGE 3 -->
         <div class="reg-page" id="reg-page-3">
-          <p class="reg-label" style="margin-bottom:14px;font-size:.88rem;">Select a Plan <span class="req">*</span></p>
-          <div class="plan-selector" id="planSelector">
-            <label>
-              <input class="plan-option" type="radio" name="regPlan" value="basic" />
-              <span class="plan-label">
-                <span class="plan-label__icon">⚡</span>
-                <span class="plan-label__name">Basic</span>
-                <span class="plan-label__price">PKR 5,000 / mo</span>
-              </span>
-            </label>
-            <label>
-              <input class="plan-option" type="radio" name="regPlan" value="standard" checked />
-              <span class="plan-label">
-                <span class="plan-label__icon">🚀</span>
-                <span class="plan-label__name">Standard</span>
-                <span class="plan-label__price">PKR 7,500 / mo</span>
-              </span>
-            </label>
-            <label>
-              <input class="plan-option" type="radio" name="regPlan" value="premium" />
-              <span class="plan-label">
-                <span class="plan-label__icon">💎</span>
-                <span class="plan-label__name">Premium</span>
-                <span class="plan-label__price">PKR 10,000 / mo</span>
-              </span>
-            </label>
-          </div>
           <div class="reg-row">
-            <div class="reg-field" id="field-startDate">
-              <label class="reg-label" for="regStartDate">Desired Start Date <span class="req">*</span></label>
-              <input class="reg-input" type="date" id="regStartDate" />
-              <span class="reg-error-msg">Please select a start date.</span>
-            </div>
-            <div class="reg-field" id="field-duration">
-              <label class="reg-label" for="regDuration">Membership Duration <span class="req">*</span></label>
-              <select class="reg-select" id="regDuration">
-                <option value="">— Select —</option>
-                <option>1 Month (Trial)</option>
-                <option>3 Months</option>
-                <option>6 Months</option>
-                <option>12 Months (Best Value)</option>
-              </select>
-              <span class="reg-error-msg">Please select a duration.</span>
-            </div>
+            <div class="reg-field" id="field-startDate"><label class="reg-label" for="regStartDate">Start Date <span class="req">*</span></label><input class="reg-input" type="date" id="regStartDate" /><span class="reg-error-msg">Please select a start date.</span></div>
+            <div class="reg-field" id="field-duration"><label class="reg-label" for="regDuration">Duration <span class="req">*</span></label><select class="reg-select" id="regDuration"><option value="">Select duration</option><option>1 Month</option><option>3 Months</option><option>6 Months</option><option>1 Year</option></select><span class="reg-error-msg">Please select a duration.</span></div>
           </div>
-          <div class="reg-row reg-row--full" style="margin-bottom:8px;">
-            <div class="reg-field">
-              <label class="reg-label" style="margin-bottom:10px;">Preferred Days <span class="req">*</span></label>
-              <div class="days-wrap" id="daysWrap">
-                <input class="day-chk" type="checkbox" id="d-mon" value="Monday"    /><label class="day-lbl" for="d-mon">Mon</label>
-                <input class="day-chk" type="checkbox" id="d-tue" value="Tuesday"   /><label class="day-lbl" for="d-tue">Tue</label>
-                <input class="day-chk" type="checkbox" id="d-wed" value="Wednesday" /><label class="day-lbl" for="d-wed">Wed</label>
-                <input class="day-chk" type="checkbox" id="d-thu" value="Thursday"  /><label class="day-lbl" for="d-thu">Thu</label>
-                <input class="day-chk" type="checkbox" id="d-fri" value="Friday"    /><label class="day-lbl" for="d-fri">Fri</label>
-                <input class="day-chk" type="checkbox" id="d-sat" value="Saturday"  /><label class="day-lbl" for="d-sat">Sat</label>
-              </div>
-              <span class="reg-error-msg" id="daysError" style="display:none;">Please select at least one day.</span>
+          <div class="reg-field">
+            <label class="reg-label">Preferred Days <span class="req">*</span></label>
+            <div class="reg-days">
+              <label class="day-label"><input type="checkbox" class="day-chk" value="Monday" /><span>Mon</span></label>
+              <label class="day-label"><input type="checkbox" class="day-chk" value="Tuesday" /><span>Tue</span></label>
+              <label class="day-label"><input type="checkbox" class="day-chk" value="Wednesday" /><span>Wed</span></label>
+              <label class="day-label"><input type="checkbox" class="day-chk" value="Thursday" /><span>Thu</span></label>
+              <label class="day-label"><input type="checkbox" class="day-chk" value="Friday" /><span>Fri</span></label>
+              <label class="day-label"><input type="checkbox" class="day-chk" value="Saturday" /><span>Sat</span></label>
             </div>
+            <span class="reg-error-msg" id="daysError" style="display:none">Please select at least one day.</span>
           </div>
-          <div class="reg-row reg-row--full" style="margin-top:18px;">
-            <div class="reg-field">
-              <label class="reg-label" for="regGoals">What are you working on? (optional)</label>
-              <textarea class="reg-textarea" id="regGoals" placeholder="Briefly describe your project, thesis, or goal — helps us match you with the right community..."></textarea>
-            </div>
-          </div>
+          <div class="reg-field"><label class="reg-label" for="regGoals">Goals (optional)</label><textarea class="reg-textarea" id="regGoals" rows="3" placeholder="What do you hope to achieve while at IT Artificer?"></textarea></div>
         </div>
-
-        <!-- PAGE 4: Review & Submit -->
+        <!-- PAGE 4 -->
         <div class="reg-page" id="reg-page-4">
-          <div style="background:rgba(6,21,41,.6);border:1px solid rgba(59,130,246,.15);border-radius:14px;padding:24px;margin-bottom:20px;">
-            <p style="font-family:'Syne',sans-serif;font-weight:700;color:var(--white);font-size:1rem;margin-bottom:16px;">📋 Application Summary</p>
-            <div id="reviewContent" style="display:grid;grid-template-columns:1fr 1fr;gap:10px 24px;font-size:.87rem;"></div>
+          <div id="reviewContent"></div>
+          <div class="reg-field" style="margin-top:24px">
+            <label class="reg-checkbox"><input type="checkbox" id="agreeTerms" /><span>I agree to the <a href="#" style="color:var(--accent)">Terms &amp; Conditions</a> and <a href="#" style="color:var(--accent)">Privacy Policy</a></span></label>
+            <span class="reg-error-msg" id="agreeError" style="display:none">Please agree to the terms to continue.</span>
           </div>
-          <div class="reg-agree">
-            <input type="checkbox" id="agreeTerms" />
-            <label for="agreeTerms">
-              I agree to IT Artificer's <a href="#">Terms &amp; Conditions</a> and <a href="#">Privacy Policy</a>.
-              I confirm that the information I've provided is accurate and that I am a currently enrolled student.
-            </label>
-          </div>
-          <p class="reg-error-msg" id="agreeError" style="margin-top:8px;">Please accept the terms to continue.</p>
         </div>
-
-      </div><!-- /body -->
-
-      <div class="reg-modal__footer" id="regFooter">
-        <button class="back-btn" type="button" id="regBack">← Back</button>
-        <button class="next-btn" type="button" id="regNext">Continue →</button>
       </div>
+      <div class="reg-footer" id="regFooter">
+        <button class="btn btn--ghost" id="regBack" type="button" style="visibility:hidden">← Back</button>
+        <button class="btn btn--primary" id="regNext" type="button">Continue →</button>
+      </div>
+    </div>
+  </div>
 
-    </div><!-- /modal -->
-  </div><!-- /overlay -->
-
-  <!-- Scripts (deferred, loaded after DOM) -->
-  <script src="js/ui.js" defer></script>
-  <script src="js/registration.js" defer></script>
+  <!-- Scripts -->
+  <script src="js/ui.js"></script>
+  <script src="js/registration.js"></script>
+  <script src="js/extras.js"></script>
 
 </body>
 </html>
