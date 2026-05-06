@@ -517,7 +517,7 @@
    FOOTER
 ══════════════════════════════════════════════════════════════ */
 .footer {
-  background: var(--pdm-dark-950);
+  background: #1515e8;
   border-top: 1px solid rgba(255,255,255,.05);
   padding: 88px 0 0;
   position: relative;
@@ -549,7 +549,7 @@
   font-size: 1.3rem;
   font-weight: 800;
   letter-spacing: -.03em;
-  color: #FFFFFF;
+  color: #862222;
 }
 
 .footer__brand p {
